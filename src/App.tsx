@@ -207,7 +207,7 @@ const AtomicSearchBoxComponent: React.FC = ({
       {engine && (
         <AtomicSearchInterface engine={engine}>
           <AtomicExternal>
-            <AtomicSearchBox redirectionUrl={"https://hexagon-test.vercel.app/"} />
+          <AtomicSearchBox redirectionUrl={"https://hexagon-test.vercel.app/#q={q}"} />
           </AtomicExternal>
         </AtomicSearchInterface>
       )}
