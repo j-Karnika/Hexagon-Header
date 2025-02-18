@@ -171,22 +171,23 @@ import {
 } from "@coveo/atomic-react";
 import { buildSearchEngine } from "@coveo/headless";
 
-interface AtomicSearchBoxProps {
-  accessToken: string;
-  organizationId: string;
-  pipeline: string;
-  searchHub: string;
-  redirectionUrl: string; // Added redirectionUrl as a prop
-}
+// interface AtomicSearchBoxProps {
+//   accessToken: string;
+//   organizationId: string;
+//   pipeline: string;
+//   searchHub: string;
+//   redirectionUrl: string; // Added redirectionUrl as a prop
+// }
 
-const AtomicSearchBoxComponent: React.FC<AtomicSearchBoxProps> = ({
-  accessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzZWFyY2hIdWIiOiJIRV9OZXh1c1NlYXJjaEh1YiIsInY4Ijp0cnVlLCJ0b2tlbklkIjoicXlraGVieXlpdHQ0Y2pybXlvc3BucmtvMjQiLCJvcmdhbml6YXRpb24iOiJwd2Jta25ycjRydHJ5Y3Z1Z3l1eHdmbjJmY3kiLCJ1c2VySWRzIjpbeyJ0eXBlIjoiVXNlciIsIm5hbWUiOiJhc21pdGhAZXhhbXBsZS5jb20iLCJwcm92aWRlciI6IkVtYWlsIFNlY3VyaXR5IFByb3ZpZGVyIn1dLCJyb2xlcyI6WyJxdWVyeUV4ZWN1dG9yIl0sImlzcyI6IlNlYXJjaEFwaSIsImV4cCI6MTczOTk2MTQxNSwiaWF0IjoxNzM5ODc1MDE1fQ.PsiaT3BWVfM6DWe8E1ysDvOjcKk_toEawEgxhVg6iLM',
+const AtomicSearchBoxComponent: React.FC = ({
+
+}) => {
+  const accessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzZWFyY2hIdWIiOiJIRV9OZXh1c1NlYXJjaEh1YiIsInY4Ijp0cnVlLCJ0b2tlbklkIjoicXlraGVieXlpdHQ0Y2pybXlvc3BucmtvMjQiLCJvcmdhbml6YXRpb24iOiJwd2Jta25ycjRydHJ5Y3Z1Z3l1eHdmbjJmY3kiLCJ1c2VySWRzIjpbeyJ0eXBlIjoiVXNlciIsIm5hbWUiOiJhc21pdGhAZXhhbXBsZS5jb20iLCJwcm92aWRlciI6IkVtYWlsIFNlY3VyaXR5IFByb3ZpZGVyIn1dLCJyb2xlcyI6WyJxdWVyeUV4ZWN1dG9yIl0sImlzcyI6IlNlYXJjaEFwaSIsImV4cCI6MTczOTk2MTQxNSwiaWF0IjoxNzM5ODc1MDE1fQ.PsiaT3BWVfM6DWe8E1ysDvOjcKk_toEawEgxhVg6iLM',
 
   organizationId ="pwbmknrr4rtrycvugyuxwfn2fcy",
   pipeline = 'HE_NexusSearchPipeline',
   searchHub = 'HE_NexusSearchHub',
-  redirectionUrl,
-}) => {
+  redirectionUrl ="https://hexagon-test.vercel.app/q="
   // Memoize the search engine so it only updates when props change
   const engine = useMemo(() => {
     return buildSearchEngine({
@@ -206,7 +207,7 @@ const AtomicSearchBoxComponent: React.FC<AtomicSearchBoxProps> = ({
       {engine && (
         <AtomicSearchInterface engine={engine}>
           <AtomicExternal>
-            <AtomicSearchBox redirectionUrl="https://hexagon-test.vercel.app/q=" />
+            <AtomicSearchBox redirectionUrl={redirectionUrl} />
           </AtomicExternal>
         </AtomicSearchInterface>
       )}
