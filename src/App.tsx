@@ -187,7 +187,7 @@ const AtomicSearchBoxComponent: React.FC = ({
   organizationId ="pwbmknrr4rtrycvugyuxwfn2fcy",
   pipeline = 'HE_NexusSearchPipeline',
   searchHub = 'HE_NexusSearchHub',
-  redirectionUrl ="https://hexagon-test.vercel.app/q="
+  redirectionUrl ="https://hexagon-test.vercel.app/search"
   // Memoize the search engine so it only updates when props change
   const engine = useMemo(() => {
     return buildSearchEngine({
